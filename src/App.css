@@ -1,25 +1,33 @@
-html,
-body,
-header,
+.body::after{
+    content: "";
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.55;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url('https://avatars.mds.yandex.net/get-pdb/918543/42fff5a3-ee0d-434e-8e06-998378876ef6/s1200');
+  }
+
+  .body{
+      margin-top: 20px;
+  }
+
+
 .view {
-  height: 100%;background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  height: 100%;
 }
 
 @media (max-width: 740px) {
-  html,
-  body,
-  header,
   .view {
     height: 1000px;
   }
 }
 @media (min-width: 800px) and (max-width: 850px) {
-  html,
-  body,
-  header,
   .view {
     height: 600px;
   }
@@ -49,12 +57,4 @@ header,
 
 h6 {
   line-height: 1.7;
-}
-
-.rgba-gradient {
-  background: -moz-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
-  background: -webkit-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
-  background: -webkit-gradient(linear, 45deg, from(rgba(42, 27, 161, 0.7)), to(rgba(29, 210, 177, 0.7)));
-  background: -o-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
-  background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
 }

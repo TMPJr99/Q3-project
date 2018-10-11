@@ -3,9 +3,7 @@ import React from 'react';
 const BottomImage = () => {
 
     return (
-        <div>
-
-        </div>
+        <div class="btm-img py-5 text-center"></div>
     )
 }
 

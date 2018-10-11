@@ -5,6 +5,8 @@ import Main from './components/Main';
 import NewPartyForm from './components/NewPartyForm';
 import RenderFormBtn from './components/RenderFormBtn';
 import Middle from './components/Middle';
+import BottomImage from './components/BottomImage';
+import BottomNav from './components/BottomNav';
 
 
 class App extends Component {
@@ -39,6 +41,8 @@ class App extends Component {
         </div>
       </div>
       <Middle/>
+      <BottomImage/>
+      <BottomNav/>
     </div>
   }
 

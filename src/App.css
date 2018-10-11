@@ -52,12 +52,33 @@ nav::before{
     
   }
 
+  .btm-img{
+    width: 100vw;
+    height: 75vh;
+    top: 0;
+    bottom: 0;
+    background-image: url('./images/pingy-tables.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
   .mid-area{
-    margin: 15vh 0 15vh;
+    margin: 25vh 0 25vh;
   }
 
   .fixed{
     color: black;
+  }
+
+  .btm-nav{
+    bottom:0;
+    left:0;
+    right:0;
+    padding: 2vh;
+    background-color: black;
+    border-top: 1px black solid;
+    opacity: 0.3;
+    margin-top: 10vh;
   }
 
 @media (max-width: 740px) {

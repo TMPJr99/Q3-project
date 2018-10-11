@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { newReservation } from '../redux/actions';
+import { updateReservation } from '../redux/actions';
 
-class NewPartyForm extends Component {
+class EditForm extends Component {
 
   state = {
     email: '',
@@ -21,14 +21,14 @@ render(){
   <div class="container card">
 
     <h5 class="card-header info-color white-text text-center py-4 mb-5">
-      <strong>Reserve Table</strong>
+      <strong>Edit Reservation</strong>
     </h5>
 
     <div class="card-body px-lg-5 pt-0">
 
       <form class="text-center row" onSubmit={(e)=> {
         e.preventDefault()
-        this.props.newReservation(this.state)
+        this.props.updateReservation(this.state)
         }}>
       <div class="col-md-6">
       <label>Email</label>
@@ -69,7 +69,7 @@ render(){
         
 
 
-        <button class="btn btn-outline-dark btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Reserve</button>
+        <button class="btn btn-outline-dark btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Update</button>
         </form>
         </div>
         </div>
@@ -78,8 +78,12 @@ render(){
 
 }
 
+const mapStateToProps = state => ({
+    reservation: state.reservation
+  })
+
 const mapDispatchToProps = dispatch => bindActionCreators({
-  newReservation
+  updateReservation
 }, dispatch)
 
-export default connect(null, mapDispatchToProps)(NewPartyForm);
+export default connect(mapStateToProps, mapDispatchToProps)(EditForm);

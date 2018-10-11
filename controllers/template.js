@@ -1,25 +1,28 @@
 const knex = require("../db/knex.js");
 
 module.exports = {
-  // CHANGE ME TO AN ACTUAL FUNCTION
-  new_party: function(req, res) {
-      knex('parties').insert({
-        quantity: req.body.quantity
+
+  new_reservation: (req, res) => {
+      knex('reservations').insert({
+        email: req.body.email,
+        date: req.body.date,
+        time_start: req.body.time_start,
+        quantity: req.body.quantity,
+        time_end: req.body.time_end,
+        table_id: Math.floor(Math.random() * 10) + 1,
+        party_name: req.body.party_name
       }).then(()=> res.sendStatus(200))
   },
 
-  new_reservation: (req, res) => {
-    knex('time_slots').insert({
-      date: req.body.date,
-      email: req.body.email,
-      time_slot: req.body.time_slot,
-      table_id: req.body.table_id,
-      party_id: req.body.party_id
-    }).then(()=> res.sendStatus(200))
+  view_reservations: (req, res) => {
+    knex('reservations').where('email', req.body.email)
+    .then((result)=> {
+      res.json(result[0])
+    })
   },
 
-  view_time_slots: (req, res) => {
-    knex('time_slots').where('party_id', req.params.id)
-      .then((result)=> res.json(result))
+  delete: (req, res) => {
+      knex('reservations').del().where('email', req.params.email)
+      res.sendStatus(200)
   }
 }

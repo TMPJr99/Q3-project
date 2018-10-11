@@ -4,7 +4,7 @@ import reducer from './reducer';
 import logger from 'redux-logger';
 
 const rootReducer = combineReducers({
-    cameras: reducer,
+    reservation: reducer,
 })
 
 export default () => createStore(rootReducer, applyMiddleware(thunk, logger))

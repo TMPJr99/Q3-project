@@ -11,7 +11,7 @@ class Main extends Component {
                   <div class="col-md-12 white-text text-center text-md-left mt-xl-5 mb-5 wow fadeInLeft" data-wow-delay="0.3s">
                     <h1 class="h1-responsive font-weight-bold mt-sm-5">Reserve Tables and Enjoy Yourself</h1>
                     <hr class="hr-light"/>
-                    <h6 class="mb-4">Click the button below to reserve a table.</h6>
+                    <h6 class="mb-4">Click one of the buttons below to reserve a table or edit an existing reservation.</h6>
                   </div>
                 </div>
               </div>

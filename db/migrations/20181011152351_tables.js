@@ -1,8 +1,8 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('tables', (table)=>{
-    table.increments();
-    table.timestamps(true, true);
+  return knex.schema.createTable('tables', (table)=> {
+      table.increments();
+      table.timestamps(true, true);
   })
 };
 

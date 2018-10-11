@@ -11,6 +11,7 @@ module.exports = {
   new_reservation: (req, res) => {
     knex('time_slots').insert({
       date: req.body.date,
+      email: req.body.email,
       time_slot: req.body.time_slot,
       table_id: req.body.table_id,
       party_id: req.body.party_id

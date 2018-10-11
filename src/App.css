@@ -1,4 +1,32 @@
-.body::after{
+.body {
+    overflow: hidden;
+    background-image: url('./images/pingy2.jpg');
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    color: black;
+}
+
+nav::before{
+  content: "";
+    position: absolute;
+    padding-top: 70px;
+    width: 100%;
+    left: 0;
+    opacity: 0.4;
+    z-index: -1;
+    background-color: black;
+}
+
+  .btn-width{
+    width: 200px;
+  }
+
+  .blur-view::after{
     content: "";
     position: fixed;
     width: 100%;
@@ -6,31 +34,47 @@
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0.55;
+    opacity: 0.7;
     z-index: -1;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-image: url('https://avatars.mds.yandex.net/get-pdb/918543/42fff5a3-ee0d-434e-8e06-998378876ef6/s1200');
+    background-color: black;
+    padding-top: 100px;
   }
 
-  .body{
-      margin-top: 20px;
+  .blur-view{
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    
   }
 
+  .mid-area{
+    margin: 15vh 0 15vh;
+  }
 
-.view {
-  height: 100%;
-}
+  .fixed{
+    color: black;
+  }
 
 @media (max-width: 740px) {
   .view {
     height: 1000px;
   }
+  .btn-rds{
+    border-radius: 10em
+}
 }
 @media (min-width: 800px) and (max-width: 850px) {
   .view {
     height: 600px;
   }
+  .btn-rds{
+    border-radius: 10em
+}
 }
 
 .btn .fa {
@@ -49,6 +93,9 @@
   .navbar:not(.top-nav-collapse) {
     background: #424f95 !important;
   }
+  .btn-rds{
+    border-radius: 10em
+}
 }
 
 .btn-white {

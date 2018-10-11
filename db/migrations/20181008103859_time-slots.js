@@ -3,6 +3,7 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('time_slots', (table)=>{
     table.increments();
     table.date('date');
+    table.string('email');
     table.string('time_slot');
     table.integer('table_id')
       .references('id')

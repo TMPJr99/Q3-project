@@ -1,8 +1,8 @@
 import React from 'react';
 
-const RenderFormBtn = () => {
+const RenderFormBtn = (props) => {
     return (
-        <button class="btn btn-outline-dark z-depth-0 my-4 button">Reserve A Table</button>
+        <button class={`fixed ${props.classes}`} onClick={()=> props.changeToForm()}>{props.btnTxt()}</button>
     )
 }
 

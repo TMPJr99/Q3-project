@@ -5,10 +5,10 @@ export const UPDATE_RESERVATION = "UPDATE_RESERVATION";
 export const FETCH_RESERVATION = "FETCH_RESERVATION";
 export const DELETE_RESERVATION = "DELETE_RESERVATION";
 
-export const newReservation = (new_time_slot) => {
-    console.log(new_time_slot)
+export const newReservation = (new_reservation) => {
+    console.log(new_reservation)
     return dispatch => {
-        axios.post('http://localhost:8000/time_slots/new', new_time_slot)
+        axios.post('http://localhost:8000/time_slots/new', new_reservation)
             .then(()=> dispatch({
                 type: NEW_RESERVATION
             }))
@@ -36,10 +36,9 @@ export const fetchReservation = (id) => {
     }
 }
 
-export const deleteReservation = (email) => {
-    console.log(email)
+export const deleteReservation = () => {
     return dispatch => {
-        axios.delete(`http://localhost:8000/time_slots/${email}`)
+        axios.delete('http://localhost:8000/time_slots/toddporter99@gmail.com')
             .then(()=> dispatch({
                 type: DELETE_RESERVATION
             }))

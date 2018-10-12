@@ -16,7 +16,8 @@ class App extends Component {
 
   state = {
     renderForm: false,
-    editForm: false
+    editForm: false,
+    finalBoss: false
   }
 
   changeToForm = () => {
@@ -31,25 +32,42 @@ class App extends Component {
     })
   }
 
+  changeToFinalForm = () => {
+    this.setState({
+      finalBoss: !this.state.finalBoss ? true : false
+    })
+  }
+
   formRender = () => {
     if(this.state.renderForm){
       return <div class="body">
         <div class="blur-view">
           <Top/><br/><br/><hr/>
-          <NewPartyForm/>
+          <NewPartyForm changeToForm={this.changeToForm}/>
           <RenderFormBtn classes="btn btn-width btn-outline-light z-depth-0 mt-4" changeToForm={this.changeToForm} btnTxt={this.buttonLabel}/>
         </div>
         <Middle/>
       </div>
     } else if(this.state.editForm){
-      return <div class="body">
+      if(!this.state.finalBoss){
+        return <div class="body">
         <div class="blur-view">
           <Top/><br/><br/><hr/>
-          <EmailInputForm/>
+          <EmailInputForm changeToFinalForm={this.changeToFinalForm} changeToEditForm={this.changeToEditForm}/>
           <EditFormBtn classes="btn btn-width btn-outline-light z-depth-0 mt-5 ml-3" changeToEditForm={this.changeToEditForm} btnTxt={this.editButtonLabel}/>
         </div>
         <Middle/>
       </div>
+      }else{
+          return <div class="body">
+          <div class="blur-view">
+            <Top/><br/><br/><hr/>
+            <EditForm changeToFinalForm={this.changeToFinalForm} changeToEditForm={this.changeToEditForm}/>
+            <EditFormBtn classes="btn btn-width btn-outline-light z-depth-0 mt-5 ml-3" changeToEditForm={this.changeToEditForm} btnTxt={this.editButtonLabel}/>
+          </div>
+          <Middle/>
+        </div>
+        }
     }else {
       return <div>
       <div class="body text-left">

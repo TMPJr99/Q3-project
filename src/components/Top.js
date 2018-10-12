@@ -6,7 +6,7 @@ const Top = (props) => {
     return (
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
             <div class="container">
-              <strong class="navbar-brand">Table Tennis</strong>
+              <strong class="navbar-brand">Ping Pong</strong>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>

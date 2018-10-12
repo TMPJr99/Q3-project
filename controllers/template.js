@@ -10,7 +10,6 @@ module.exports = {
         quantity: req.body.quantity,
         time_end: req.body.time_end,
         table_id: Math.floor(Math.random() * 10) + 1,
-        party_name: req.body.party_name
       }).then(()=> res.sendStatus(200))
   },
 
@@ -23,6 +22,6 @@ module.exports = {
 
   delete: (req, res) => {
       knex('reservations').del().where('email', req.params.email)
-      res.sendStatus(200)
+      .then(()=>{res.sendStatus(200)})
   }
 }
